@@ -54,7 +54,7 @@ net = ResNet18().to(device)
 
 # 定义损失函数和优化方式
 criterion = nn.CrossEntropyLoss()  #损失函数为交叉熵，多用于多分类问题
-optimizer = optim.SGD(net.parameters(), lr=LR, momentum=0.9, weight_decay=5e-4) #优化方式为mini-batch momentum-SGD，并采用L2正则化（权重衰减）
+optimizer = optim.Adam(net.parameters(), lr=LR, weight_decay = 0) #并采用L2正则化（权重衰减）
 
 # 训练
 if __name__ == "__main__":
