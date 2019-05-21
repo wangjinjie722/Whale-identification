@@ -37,7 +37,7 @@ def mycopyfile(srcfile,dstfile):
 
 if __name__ == "__main__":
     path = "/Users/ruoqi/Downloads/whale/input/"
-    train_df = pd.read_csv(path + "train.csv")
+    train_df = pd.read_csv(path + "ortrain.csv")
     X = train_df['Image']
     y = train_df['Id']
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random_state=42)
