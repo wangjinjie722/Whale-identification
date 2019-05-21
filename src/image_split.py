@@ -48,6 +48,6 @@ if __name__ == "__main__":
     testfile = pd.merge(X_ts, y_ts, left_index=True, right_index=True)
     y_tr = pd.DataFrame(data=y_train.values, columns=['Id'])
     X_tr = pd.DataFrame(data=X_train.values, columns=['Image'])
-    trainfile = pd.merge(X_ts, y_ts, left_index=True, right_index=True)
+    trainfile = pd.merge(X_tr, y_tr, left_index=True, right_index=True)
     testfile.to_csv(path + "test.csv",index=False)
     trainfile.to_csv(path + "train.csv",index=False)   
