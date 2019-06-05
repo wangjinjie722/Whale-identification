@@ -31,9 +31,17 @@ def mycopyfile(srcfile,dstfile):
 
 
 if __name__ == "__main__":
-    path = "/datasets/home/96/996/ruz005/"
-    train_df = pd.read_csv(path + "test.csv")
+    '''
+        This is to split part of dataset into testset, which will be helpful to show the result.
+    '''
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    parser.add_argument('-i', '--input', required=False, type=str, default='stdin', help="Input Dataset path")
+    parser.add_argument('-c', '--csv', required=True, type=str, help="Required testset label csv file, to split the dataset. The csv file is test.csv")
+    parser.add_argument('-o', '--output', required=False, type=str, default='stdout', help="Split out testeet path")
+    args = parser.parse_args()
+    train_df = pd.read_csv(arg.csv)
     X = train_df['Image']
     y = train_df['Id']
     for i in X:
-        mymovefile(path+"whaletrain/"+i, path+"whaletest/"+i)
+        mymovefile(arg.input + i, arg.output + i)
