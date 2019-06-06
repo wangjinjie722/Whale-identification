@@ -37,7 +37,7 @@ if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument('-i', '--input', required=False, type=str, default='stdin', help="Input Dataset path")
-    parser.add_argument('-c', '--csv', required=True, type=str, help="Required testset label csv file, to split the dataset. The csv file is test.csv")
+    parser.add_argument('-c', '--csv', required=True, type=str, help="The path of required testset label csv file, to split the dataset. The csv file is test.csv")
     parser.add_argument('-o', '--output', required=False, type=str, default='stdout', help="Split out testeet path")
     args = parser.parse_args()
     train_df = pd.read_csv(arg.csv)
